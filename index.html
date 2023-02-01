@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KPAFDA</title>
+        <script src="assset/js/cek.js"></script>
+        <link rel="stylesheet" href="assset/font-awesome/css/all.css" />
+        <link rel="stylesheet" href="assset/css/style.css" />
+        <link rel="stylesheet" href="assset/css/index.css" />
+        <style>
+            .opening {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                /* background-color: red; */
+                top: 0;
+                position: fixed;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .opening > * {
+                background-color: #fff;
+            }
+
+            .kiri {
+                animation: kiri 1s forwards;
+            }
+
+            .kanan {
+                animation: kanan 1s forwards;
+            }
+
+            @keyframes kiri {
+                to {
+                    transform: translateX(-100%);
+                }
+            }
+
+            @keyframes kanan {
+                to {
+                    transform: translateX(100%);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="opening">
+                <div class="kiri"></div>
+                <div class="kanan"></div>
+            </div>
+            <p id="teks"></p>
+        </main>
+
+        <div class="template-navbar"></div>
+    </body>
+
+    <script src="assset/js/tempateNavbar.js"></script>
+    <script src="assset/js/script.js"></script>
+    <script>
+        let i = 0;
+        let txt = `Selamat datang Tuan & Nyonya KPAFDA, Semoga harimu menyenangkan`;
+        let speed = 50;
+
+        setTimeout(function ketik() {
+            if (i < txt.length) {
+                document.getElementById("teks").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(ketik, 50);
+            }
+        }, 1200);
+    </script>
+</html>

@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    overflow: hidden;
+    height: 100vh;
+}
+main {
+    padding-top: 15vh;
+    background-color: #000;
+    color: #0f0;
+    font-size: 10vw;
+    height: 100vh;
+}
